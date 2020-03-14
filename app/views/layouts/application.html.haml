@@ -7,4 +7,16 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    .header
+      .header__title
+        = link_to "SHOW OFF" , '#'
+      .header__btn
+        = link_to "Post Your Lovely Gear!" ,'#'
+      .header__user
+        = link_to '#' do
+          .header__user__img
+            = image_tag "solovair.jpeg",width: "60px",height: "60px", alt: "ほげ"
+            %p.header__user__img__name
+              tensyo
+    .contents
+      = yield
