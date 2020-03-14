@@ -1,53 +1,43 @@
 .header{
   width:100%;
-  height: 80px;
+  height: 60px;
   display:flex;
-  justify-content: space-between;
-  background-color: #1dbabd;
-  line-height: 80px;
+  background-color: #1d71ba;
+  line-height: 60px;
   color:white;
   //aタグ共通のスタイル
   a{
     color: white;
     text-decoration: none;
   }
-  &__title{
-    font-size: 20px;
+  &__content{
+    width: calc(100% - 150px);
+    font-size: 24px;
+    padding-left:150px;
     font-weight: bold;
-    padding-left:30px;
-  }
-  &__btn{
-    width:240px;
-    height:40px;
-    font-size: 18px;
     text-align: center;
-    a{
-      display: inline-block;
-      width: 100%;
-      height: 40px;
-      line-height: 40px;
-      color:#FFFFFF;
-      background-color: #e99700;
-      border:#e09201 2px solid;
-      border-radius: 12px;
-    }
-  }
-  &__user{
-    width:200px;
-    line-height: 60px;
-    margin-top:10px;
-    &__img{
-      width: 60px;
-      height: 60px;
-      margin-right:15px;
-      display: flex;
-      img{
-        display: block;
-        border: 1px solid #FFFFFF;
-        border-radius: 50%;
-      }
-      &__name{
-        padding-left:15px;
+    &__user{
+      width:150px;
+      line-height: 60px;
+      margin-top:10px;
+      margin-right:10px;
+      float:right;
+      &__img{
+        width: 40px;
+        height: 40px;
+        margin-right:15px;
+        display: flex;
+        img{
+          display: block;
+          border: 1px solid #FFFFFF;
+          border-radius: 50%;
+        }
+        &__name{
+          line-height: 40px;
+          padding-left:15px;
+          font-size: 14px;
+          font-weight: none;
+        }
       }
     }
   }
