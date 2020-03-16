@@ -1,44 +1,7 @@
 .post_content
-  = link_to '#', class: "post_content__content" do 
-    .post_content__content__img-area
-      = image_tag "trancell.png",alt: "ほげ"
-    .post_content__content__text-area
-      僕の大好きなトランセルです。
-      %br
-      大好きすぎてはげそうです。
-      %br
-      絶対バタフリーにしはしません。
-      %br
-      彼はレベル100までトランセルです。もしかしたら愛護団体に訴えられちゃうかもしれませんね。
-      %br
-      でもいいんです。
-      %br
-      彼は体当たりを覚えているので・・・！
-      %br
-      %br
-      %br
-      嗚呼・・・。
-      %br
-      最高のフォルムだ・・・。
-      %br
-      %br
-      最高すぎる！
-  = link_to '#', class: 'post_content__content' do 
-    .post_content__content__img-area
-      = image_tag "Fred_Perry_logo.png",alt: "ほげ"
-    .post_content__content__text-area
-      Fred Perryのロゴです。
-      %br
-      かっこいいよね。シンプルで。
-      %br
-      でも高いんだよ・・・。
-  = link_to '#', class: 'post_content__content' do 
-    .post_content__content__img-area
-      = image_tag "balance.jpg",alt: "ほげ"
-    .post_content__content__text-area
-      テキスト部分
-  = link_to '#', class: 'post_content__content' do 
-    .post_content__content__img-area
-      = image_tag "Fred_Perry_logo.png",alt: "ほげ"
-    .post_content__content__text-area
-      テキスト部分
+  - @posts.each do |post|
+    = link_to post_path(post.id), class: "post_content__content" do 
+      .post_content__content__img-area
+        = image_tag post.image ,alt: "ほげ"
+      .post_content__content__text-area
+        = simple_format( post.comment, {})

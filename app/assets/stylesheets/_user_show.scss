@@ -1,0 +1,62 @@
+.user_contents{
+  width:calc(80% - 40px);
+  min-height: 100vh;
+  padding: 10px 20px;
+  margin: 40px auto;
+  background-color: #FFFFFF;
+  &__upper-info{
+    width: calc(100% - 30px);
+    height:80px;
+    padding:15px;
+    display:flex;
+    justify-content: space-between;
+    &__profile{
+      width:60%;
+      display:flex;
+      &--img{
+        margin:10px 0px;
+        height:58px;
+        width:58px;
+        border: 1px #666666 solid;
+        border-radius: 50%;
+      }
+      &--name{
+        width:180px;
+        font-size: 20px;
+
+        line-height: 60px;
+
+        margin-left:10px;
+        padding:10px;
+      }
+    }
+    &__action{
+      height:100%;
+      width:20%;
+      &--edit{
+        border: 1px #cccccc solid;
+        border-radius: 8px;
+        background-color:#dddddd;
+        margin-top:10px;
+        text-align: center;
+      }
+      &--sign-out{
+        border: 1px #cccccc solid;
+        border-radius: 8px;
+        background-color:#dddddd;
+        margin-top:10px;
+        text-align: center;
+      }
+    }
+  }
+  &__under-info{
+    width:100%;
+    min-height:calc(100hv - 110px);
+    &--title{
+      font-size: 26px;
+    }
+    &--text{
+      background-color: rgb(40, 185, 40);
+      }
+  }
+}

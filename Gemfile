@@ -61,3 +61,10 @@ gem 'devise'
 #Hamlを導入
 gem 'haml-rails'
 gem 'erb2haml'
+
+#アイコンを表示したいのでawesome導入
+gem "font-awesome-sass"
+
+#画像アップロードようのgem
+gem 'carrierwave'
+gem 'mini_magick'

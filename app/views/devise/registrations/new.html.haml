@@ -8,6 +8,13 @@
       %br/
       = f.text_field :name, autofocus: true, autocomplete: "name"
 
+    -# prof_imageを編集するためのfieldを手動で追加 
+    .field
+      = f.label :prof_image
+      %br/
+      = f.file_field :prof_image
+    -#ここまで
+    
     .field
       = f.label :email
       %br/

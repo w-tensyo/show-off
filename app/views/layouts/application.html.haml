@@ -9,27 +9,24 @@
   %body
     .header
       .header__content
-        = link_to "SHOW OFF" , '#'
+        = link_to root_path, id:'title' do
+          SHOW OFF
         .header__content__user
           -if user_signed_in?
-            = link_to '#' do
+            = link_to user_path(current_user) do
               .header__content__user__img
-                = image_tag "solovair.jpeg",width: "34px",height: "34px", alt: "ほげ"
+                = image_tag current_user.prof_image ,width: "34px",height: "34px", alt: "ほげ"
                 %p.header__content__user__img__name
                   = current_user.name
           -else
-            = link_to '#' do
-              .header__content__user__img
-                = image_tag "solovair.jpeg",width: "34px",height: "34px", alt: "ほげ"
-                %p.header__content__user__img__name
-                  = link_to new_user_session_path do
-                    ログイン
+            %p.header__content__user--unlogin
+              = link_to user_session_path do
+                ログイン
     .contents
       = yield
     .post-btn
-      = link_to '#' do
-        SHOW
-        %br OFF!
+      = link_to new_post_path do
+        = icon('far', 'image')
     .footer
       %p.footer__text
         (c) 2020 Show off

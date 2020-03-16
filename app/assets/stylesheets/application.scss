@@ -1,6 +1,12 @@
 @import "reset";
+
+@import url('https://fonts.googleapis.com/css?family=Caveat:700&display=swap');
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "common";
 @import "header";
 @import "posts";
 @import "sign_up";
 @import "footer";
+@import "user_show";
+@import "post-detail";

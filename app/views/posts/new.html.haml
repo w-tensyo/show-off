@@ -1,0 +1,9 @@
+.post_content
+  = form_for(@post) do |f|
+    %p コメント
+    = f.text_area :comment
+    %p 画像のURLを入力
+    = f.file_field :image
+    %p 投稿
+    = f.submit
+

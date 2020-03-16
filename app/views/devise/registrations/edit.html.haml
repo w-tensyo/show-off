@@ -6,6 +6,14 @@
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
+
+  -# prof_imageを編集するためのfieldを手動で追加 
+  .field
+    = f.label :prof_image
+    %br/
+    = f.file_field :prof_image
+  -#ここまで
+
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div
       Currently waiting confirmation for: #{resource.unconfirmed_email}
