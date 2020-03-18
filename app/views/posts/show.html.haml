@@ -1,2 +1,14 @@
-.post_detail
-  = @post.comment
+.post_contents
+  .post_contents__header
+    = image_tag @post.user.prof_image, class:"post_contents__header--img"
+    .post_contents__header--name
+      = @post.user.name
+  %hr
+  .post_contents__body
+    .post_contents__body--img
+      = image_tag @post.image
+    .post_contents__body__comment
+      %p.post_contents__body__comment--title
+        コメント
+      .post_contents__body__comment--detail
+        = simple_format(@post.comment, {})

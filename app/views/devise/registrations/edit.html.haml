@@ -1,44 +1,66 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+.sign_contents
+  %h2 プロフィール編集
+  -# Edit #{resource_name.to_s.humanize}
+  %hr
 
-  -# prof_imageを編集するためのfieldを手動で追加 
-  .field
-    = f.label :prof_image
-    %br/
-    = f.file_field :prof_image
-  -#ここまで
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      .field__left
+        = f.label "メールアドレス"
+      .field__right
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "field__entry-form"
 
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+    -# prof_imageを編集するためのfieldを手動で追加 
+    .field
+      .field__left
+        = f.label "プロフィールコメント"
+      .field__right
+        = f.text_area :text, autofocus: true
+    -# ここまで
+
+    -# prof_imageを編集するためのfieldを手動で追加 
+    .field
+      .field__left
+        = f.label "プロフィール画像"
+      .field__right
+        = f.file_field :prof_image, autofocus: true
+    -# ここまで
+
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div
+        パスワード for: #{resource.unconfirmed_email}
+    .field
+      .field__left
+        = f.label "新規パスワード",class: "field__com"
+      .field__right
+        = f.password_field :password, autocomplete: "new-password"
+        - if @minimum_password_length
+          %br/
+          .field__right__under-text
+            = @minimum_password_length
+            文字以上入力してください。（半角英数字）
+    .field
+      .field__left
+        = f.label "パスワード再入力"
+        %br/
+      .field__right
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+
+    .field
+      .field__left
+        = f.label "現在のパスワード"
+        .field__left__under-text
+          パスワード再設定の場合、
+          %br
+          現在のパスワードを入力する必要があります。
+      .field__right
+        = f.password_field :current_password, autocomplete: "current-password"
+    %hr
+      .sign_contents__under
+        = f.submit "更新",class: "sign_contents__under--singin-btn"
+        .sign_contents__under__other
+          = link_to :back do
+            .sign_contents__under__other__back-btn
+              Back
+          = render "devise/shared/links"

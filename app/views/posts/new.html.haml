@@ -1,9 +1,24 @@
 .post_content
-  = form_for(@post) do |f|
-    %p コメント
-    = f.text_area :comment
-    %p 画像のURLを入力
-    = f.file_field :image
-    %p 投稿
-    = f.submit
+  %h2 投稿
+  %hr
+  -# = form_for(@post) do |f|
+  -#   %p 投稿コメント
+  -#   = f.text_area :comment
+  -#   %p 画像のURLを入力
+  -#   = f.file_field :image
+  -#   = f.fields_for :gear do |i|
+  -#     %p 自慢したい機材
+  -#     = i.text_field :equiment
+  -#     %p 詳細
+  -#     = i.text_area :comment
+  -#   = f.submit "投稿"
+
+  = form_for(@post_form, url: {controller: 'posts',action: 'create'}) do |form|
+    = form.text_field :comment
+    = form.file_field :image
+    = form.text_field :equipment
+    = form.text_area :equ_commnt
+    = form.hidden_field :cid, :value => ""
+    = form.hidden_field :userid, :value => ""
+    = form.submit "登録"
 

@@ -8,25 +8,24 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .header
-      .header__content
-        = link_to root_path, id:'title' do
-          SHOW OFF
-        .header__content__user
-          -if user_signed_in?
-            = link_to user_path(current_user) do
-              .header__content__user__img
-                = image_tag current_user.prof_image ,width: "34px",height: "34px", alt: "ほげ"
-                %p.header__content__user__img__name
-                  = current_user.name
-          -else
-            %p.header__content__user--unlogin
-              = link_to user_session_path do
-                ログイン
+      = link_to root_path, class:"header__content", id:'title' do
+        SHOW OFF
+      .header__content__user
+        -if user_signed_in?
+          = link_to user_path(current_user) do
+            = image_tag current_user.prof_image, class: "header__content__user__img", alt: "ほげ"
+          = link_to user_path(current_user),class:"header__content__user__img__name" do
+            = current_user.name
+        -else
+          %p.header__content__user--unlogin
+            = link_to new_user_session_path do
+              ログイン
     .contents
       = yield
-    .post-btn
-      = link_to new_post_path do
-        = icon('far', 'image')
+    -if user_signed_in?
+      .post-btn
+        = link_to new_post_path do
+          = icon('far', 'image')
     .footer
       %p.footer__text
         (c) 2020 Show off

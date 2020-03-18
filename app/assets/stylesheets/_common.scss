@@ -1,9 +1,8 @@
-
-
 a{
   text-decoration: none;
   color: #333333;
 }
+
 body{
   background-color: #dddddd;
 }
@@ -21,5 +20,14 @@ body{
 }
 
 .border{
-  border: violet 2px dotted;
+  border: $theme-accent-color 2px dotted;
+}
+
+hr{
+  border: dotted 1px $theme-accent-color;
+  margin-bottom:15px;
+}
+
+html{
+  color:$theme-font-color;
 }

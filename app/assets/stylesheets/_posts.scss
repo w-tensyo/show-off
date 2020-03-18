@@ -1,15 +1,33 @@
 .post_content{
-  width:calc(100% - 30px);
+  width:$post-detail-width;
   height: 100%;
-  padding-top: 20px;
-  padding-left:15px;
-  padding-right:15px;
+  padding:$post-detail-padding;
   display:flex;
   flex-wrap: wrap;
+  &__user{
+    width:100%;
+    height:40px;
+    line-height: 40px;
+    padding-left:10px;
+    display: flex;
+    &__icon{
+      img{
+        margin:4px;
+        height:28px;
+        width:28px;
+        border: 1px #666666 solid;
+        background-color: white;
+        border-radius: 50%;
+      }
+    }
+    &__name{
+      line-height: 40px;
+      font-size: 12px;
+    }
+  }
   &__content{
     width: calc(100% / 3 - 57px);
-    max-height:450px;
-    background-color: #ffffff;
+    background-color: #fffafd;
     border: 1px solid #cccccc;
     margin-left: 40px;
     margin-bottom: 40px;
@@ -24,6 +42,7 @@
       font-size: 12px;
       overflow: hidden;
       width:calc(100% - 10px);
+      min-height:80px;
       a{
         display: block;
       }
@@ -35,8 +54,8 @@
   width:80px;
   height: 80px;
   text-align: center;
-  background-color: #ff31b4;
-  border:#db31b2 2px solid;
+  background-color: $theme-accent-color;
+  border:$theme-accent-sub-color 2px solid;
   border-radius: 50%;
   position:fixed;
   bottom: 40px;

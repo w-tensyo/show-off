@@ -1,7 +1,7 @@
 .user_contents{
-  width:calc(80% - 40px);
-  min-height: 100vh;
-  padding: 10px 20px;
+  width:$user-detail-width;
+  min-height: 60vh;
+  padding:$post-detail-padding;
   margin: 40px auto;
   background-color: #FFFFFF;
   &__upper-info{
@@ -33,19 +33,30 @@
     &__action{
       height:100%;
       width:20%;
+      display: block;
       &--edit{
-        border: 1px #cccccc solid;
-        border-radius: 8px;
-        background-color:#dddddd;
+        width:100%;
         margin-top:10px;
-        text-align: center;
+        text-align: left;
+        a{
+          display: block;
+          font-size:12px;
+        }
+        i{
+          padding-right:10px;
+        }
       }
       &--sign-out{
-        border: 1px #cccccc solid;
-        border-radius: 8px;
-        background-color:#dddddd;
-        margin-top:10px;
-        text-align: center;
+        width:100%;
+        margin-top:15px;
+        text-align: left;
+        a{
+          display: block;
+          font-size:12px;
+        }
+        i{
+          padding-right:10px;
+        }
       }
     }
   }
@@ -56,7 +67,16 @@
       font-size: 26px;
     }
     &--text{
-      background-color: rgb(40, 185, 40);
-      }
+    }
+  }
+}
+.user_posts{
+  width:100%;
+  &--title{
+    margin-left:40px;
+    font-size:30px;
+  }
+  &__list{
+    margin:0 auto;
   }
 }
