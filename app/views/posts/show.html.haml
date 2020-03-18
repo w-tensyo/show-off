@@ -7,8 +7,15 @@
   .post_contents__body
     .post_contents__body--img
       = image_tag @post.image
-    .post_contents__body__comment
-      %p.post_contents__body__comment--title
-        コメント
-      .post_contents__body__comment--detail
-        = simple_format(@post.comment, {})
+    %table.post_contents__body__equ-list
+      - @post.gears.each do |gear|
+        %tr
+          %th.post_contents__body__equ-list--name
+            = gear.equipment
+          %td.post_contents__body__equ-list--detail
+            = simple_format(gear.equ_comment, {})
+  .post_contents__under
+    %p.post_contents__under__comment--title
+      コメント
+    .post_contents__under__comment--detail
+      = simple_format(@post.comment, {})

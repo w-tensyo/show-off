@@ -1,22 +1,21 @@
 class PostsController < ApplicationController
 
-  # 避難
-  # class PostForm
-  #   include ActiveModel::Model #テーブルは持たないが、ApplicationRecordのsaveメソッドなどを提供
+  class PostForm
+    include ActiveModel::Model #テーブルは持たないが、ApplicationRecordのsaveメソッドなどを提供
   
-  #   attr_accessor :comment, :image, :equipment, :equ_commnt, :post_id 
+    attr_accessor :comment, :image, :equipment, :equ_comment, :post_id, :user_id
   
-  #   validates :image, presence: true
+    validates :image, presence: true
   
-  #   def save
-  #     return false if invaild? #バリデーションを追加する場合はここに追加
+    def save
+      return false if invalid? #バリデーションを追加する場合はここに追加
   
-  #     #postインスタンスを作成。Postsテーブルの各種カラムを引数で指定してあげる。この段階で各種パラメータはnilとなっていると思う
-  #     post = Post.new(comment: comment,image: image)
-  #     post.gears.new(equipment: equipment,equ_commnt: equ_commnt, post_id: post_id)
-  #     post.save
-  #   end
-  # end
+      #postインスタンスを作成。Postsテーブルの各種カラムを引数で指定してあげる。この段階で各種パラメータはnilとなっていると思う
+      post = Post.new(comment: comment,image: image, user_id: user_id)
+      post.gears.new(equipment: equipment,equ_comment: equ_comment, post_id: post_id)
+      post.save
+    end
+  end
 
   
   def index
@@ -42,6 +41,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post_form).permit(:comment, :image, :equipment, :equ_commnt, :post_id).merge(user_id: current_user.id)
+    params.require(:posts_controller_post_form).permit(:comment, :image, :equipment, :equ_comment, :post_id).merge(user_id: current_user.id)
   end
 end

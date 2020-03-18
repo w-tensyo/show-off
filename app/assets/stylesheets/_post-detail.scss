@@ -29,8 +29,30 @@
       max-width:50%;
       margin-bottom:15px;
     }
+    &__equ-list{
+      width: calc(50% - 40px);
+      display: flex;
+      tbody{
+        width: 100%;
+      }
+      &--name{
+        width: 40%;
+        margin-right:10px;
+        padding:5px 10px;
+        border-bottom: solid 1px #666666;
+        font-size: 12px;
+      }
+      &--detail{
+        margin-left:20px;
+        padding:5px 10px;
+        width: 60%;
+        font-size:12px;
+      }
+    }
+  }
+  &__under{
     &__comment{
-      width: 50%;
+      width: 100%;
       &--title{
         font-size: 18px;
         font-weight: bold;
