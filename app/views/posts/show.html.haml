@@ -1,21 +1,23 @@
-.post_contents
-  .post_contents__header
-    = image_tag @post.user.prof_image, class:"post_contents__header--img"
-    .post_contents__header--name
+.post_show_contents
+  .post_show_contents__header
+    = image_tag @post.user.prof_image, class:"post_show_contents__header--img"
+    .post_show_contents__header--name
       = @post.user.name
   %hr
-  .post_contents__body
-    .post_contents__body--img
+  .post_show_contents__body
+    .post_show_contents__body--img
       = image_tag @post.image
-    %table.post_contents__body__equ-list
-      - @post.gears.each do |gear|
-        %tr
-          %th.post_contents__body__equ-list--name
-            = gear.equipment
-          %td.post_contents__body__equ-list--detail
-            = simple_format(gear.equ_comment, {})
-  .post_contents__under
-    %p.post_contents__under__comment--title
-      コメント
-    .post_contents__under__comment--detail
-      = simple_format(@post.comment, {})
+    .post_show_contents__body__content
+      %p.post_show_contents__body__content__comment--title
+        コメント
+      .post_show_contents__body__content__comment--detail
+        = simple_format(@post.comment, {})
+  .post_show_contents__under
+    .post_show_contents__under__equ-title
+      機材詳細
+    - @post.gears.each do |gear|
+      .post_show_contents__under__equ-list
+        %p.post_show_contents__under__equ-list--name
+          = gear.equipment
+        %p.post_show_contents__under__equ-list--detail
+          = gear.equ_comment

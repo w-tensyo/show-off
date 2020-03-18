@@ -5,7 +5,7 @@
   display:flex;
   flex-wrap: wrap;
   &__user{
-    width:100%;
+    width:calc(100% - 10px);
     height:40px;
     line-height: 40px;
     padding-left:10px;
