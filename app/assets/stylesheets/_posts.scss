@@ -2,6 +2,7 @@
   width:$post-detail-width;
   height: 100%;
   padding:$post-detail-padding;
+  background-color: #eeeeee;
   display:flex;
   flex-wrap: wrap;
   &__user{
@@ -42,7 +43,6 @@
       font-size: 12px;
       overflow: hidden;
       width:calc(100% - 10px);
-      min-height:80px;
       a{
         display: block;
       }

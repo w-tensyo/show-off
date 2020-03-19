@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def show
-    @posts = current_user.posts
+    @posts = @users.posts
   end
 
   def edit
@@ -10,10 +10,13 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    if user_signed_in?
-      @users = User.all
-    else
-      redirect_to root_path
-    end
+
+    @users = User.find(params[:id])
+
+    # if user_signed_in?
+    #   @users = User.find(params[:id])
+    # else
+    #   redirect_to root_path
+    # end
   end
 end

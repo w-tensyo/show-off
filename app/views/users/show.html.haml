@@ -1,23 +1,31 @@
 .user_contents
   .user_contents__upper-info
     .user_contents__upper-info__profile
-      = image_tag current_user.prof_image, class:"user_contents__upper-info__profile--img",width: "58px",height: "58px", alt: "ほげ"
+      = image_tag @users.prof_image, class:"user_contents__upper-info__profile--img",width: "58px",height: "58px", alt: "ほげ"
       .user_contents__upper-info__profile--name
-        = current_user.name
+        = @users.name
     .user_contents__upper-info__action
-      = link_to destroy_user_session_path,class: "user_contents__upper-info__action--edit", method: :delete do
-        = icon('fas', 'sign-out-alt')
-        ログアウト
-        %br
-      = link_to edit_user_registration_path, class:"user_contents__upper-info__action--sign-out", method: :get do
-        = icon('fas', 'user-edit')
-        編集
+      -if user_signed_in? && current_user.id == @users.id
+        = link_to destroy_user_session_path,class: "user_contents__upper-info__action--edit", method: :delete do
+          = icon('fas', 'sign-out-alt')
+          ログアウト
+          %br
+        = link_to edit_user_registration_path, class:"user_contents__upper-info__action--sign-out", method: :get do
+          = icon('fas', 'user-edit')
+          編集
+      - elsif 
+        = link_to "#",class: "user_contents__upper-info__action--edit", method: :delete do
+          = icon('far', 'envelope')
+          メッセージを送る
+        = link_to "#", class:"user_contents__upper-info__action--sign-out", method: :get do
+          = icon('fas', 'user-edit')
+          編集できないよ
   .user_contents__under-info
     .user_contents__under-info--title
       プロフィール
     %hr.border
     .user_contents__under-info--text
-      = simple_format( current_user.text, {})
+      = simple_format( @users.text, {})
 .user_posts
   .user_posts--title
     投稿一覧
