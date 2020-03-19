@@ -1,0 +1,69 @@
+.sign_contents{
+  width:$user-detail-width;
+  min-height: 80vh;
+  padding:$post-detail-padding;
+  margin: 40px auto;
+  background-color: #eeeeee;
+  h2{
+    font-size:20px;
+    margin-bottom:5px;
+  }
+  .field{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:15px;
+    &__left{
+      width:45%;
+      margin-right:15px;
+      display: block;
+      &__under-text{
+        font-size:10px;
+      }
+    }
+    &__right{
+      width:45%;
+      &__under-text{
+        font-size:10px;
+      }
+    }
+  }
+  &__under{
+    width: 100%;
+    margin-right:10px;
+    display: flex;
+    justify-content: space-between;
+    &--singin-btn{
+      border-style:none;
+      margin-bottom: 30px;
+      border:1px solid $theme-accent-sub-color;
+      border-radius: 8px;
+      background-color:$theme-accent-color;
+      color:#FFFFFF;
+      padding:5px 10px;
+    }
+    &__other{
+      width:30%;
+      display: flex;
+      justify-content: flex-end;
+      &__back-btn{
+        border-style:none;
+        margin-bottom: 30px;
+        border:1px solid #666666;
+        border-radius: 8px;
+        background-color:#FFFFFF;
+        color:#666666;
+        padding:5px 10px;
+        margin-right:20px;
+      }
+      &__login-btn{
+        border-style:none;
+        margin-bottom: 30px;
+        border:1px solid #666666;
+        border-radius: 8px;
+        background-color:#FFFFFF;
+        color:#666666;
+        padding:5px 10px;
+      }
+    }
+  }
+}

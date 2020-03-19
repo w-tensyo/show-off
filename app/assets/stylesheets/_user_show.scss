@@ -1,0 +1,86 @@
+.user_contents{
+  width:$user-detail-width;
+  min-height: 60vh;
+  padding:$post-detail-padding;
+  margin: 40px auto;
+  background-color: #eeeeee;
+  border-radius:8px;
+  
+  &__upper-info{
+    width: calc(100% - 30px);
+    height:80px;
+    padding:15px;
+    display:flex;
+    justify-content: space-between;
+    &__profile{
+      width:60%;
+      display:flex;
+      &--img{
+        margin:10px 0px;
+        height:58px;
+        width:58px;
+        border: 1px #666666 solid;
+        border-radius: 50%;
+      }
+      &--name{
+        width:180px;
+        font-size: 20px;
+
+        line-height: 60px;
+
+        margin-left:10px;
+        padding:10px;
+      }
+    }
+    &__action{
+      height:100%;
+      width:20%;
+      display: block;
+      &--edit{
+        width:100%;
+        margin-top:10px;
+        text-align: left;
+        a{
+          display: block;
+          font-size:12px;
+        }
+        i{
+          padding-right:10px;
+        }
+      }
+      &--sign-out{
+        width:100%;
+        margin-top:15px;
+        text-align: left;
+        a{
+          display: block;
+          font-size:12px;
+        }
+        i{
+          padding-right:10px;
+        }
+      }
+    }
+  }
+  &__under-info{
+    width:100%;
+    min-height:calc(100hv - 110px);
+    &--title{
+      font-size: 26px;
+    }
+    &--text{
+    }
+  }
+}
+.user_posts{
+  width:100%;
+  &--title{
+    width:calc(100% - 40px);
+    padding:20px 40px 0px;
+    font-size:30px;
+    background-color: #eeeeee;
+  }
+  &__list{
+    margin:0 auto;
+  }
+}

@@ -51,3 +51,23 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#デバッグ用のgemを導入
+gem 'pry-rails'
+
+#ユーザー管理用のgemを導入
+gem 'devise'
+
+#Hamlを導入
+gem 'haml-rails'
+gem 'erb2haml'
+
+#アイコンを表示したいのでawesome導入
+gem "font-awesome-sass"
+
+#画像アップロードようのgem
+gem 'carrierwave'
+gem 'mini_magick'
+
+
+gem 'activerecord-import'

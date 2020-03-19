@@ -1,0 +1,30 @@
+.post_create_content
+  .post_content__title
+    %h2 投稿
+    %hr
+
+    = form_for(@post_form, url: {controller: 'posts',action: 'create'}) do |f|
+      .post_content__form
+        .post_content__form__left
+          = f.label "コメント"
+        .post_content__form__right
+          = f.text_field :comment
+      .post_content__form
+        .post_content__form__left
+          = f.label "画像"
+        .post_content__form__right
+          = f.file_field :image
+      .post_content__form
+        .post_content__form__left
+          = f.label "機材名"
+        .post_content__form__right
+          = f.text_field :equipment
+      .post_content__form
+        .post_content__form__left
+          = f.label "機材詳細"
+        .post_content__form__right
+          = f.text_area :equ_comment
+      = f.hidden_field :cid, :value => ""
+      = f.hidden_field :userid, :value => ""
+      = f.submit "登録"
+

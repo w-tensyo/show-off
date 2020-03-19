@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ShowOff
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .header
+      = link_to root_path, class:"header__content", id:'title' do
+        SHOW OFF
+      .header__content__user
+        -if user_signed_in?
+          = link_to user_path(current_user) do
+            = image_tag current_user.prof_image, class: "header__content__user__img", alt: "ほげ"
+          = link_to user_path(current_user),class:"header__content__user__img__name" do
+            = current_user.name
+        -else
+          %p.header__content__user--unlogin
+            = link_to new_user_session_path do
+              ログイン
+    .contents
+      = yield
+    -if user_signed_in?
+      .post-btn
+        = link_to new_post_path do
+          = icon('far', 'image')
+    .footer
+      %p.footer__text
+        (c) 2020 Show off
