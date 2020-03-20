@@ -8,6 +8,7 @@ $header-user-area:150px;
   background-color: $theme-color;
   line-height: 60px;
   color:white;
+  border-bottom: 10px solid $theme-accent-color;
   //aタグ共通のスタイル
   a{
     color: white;

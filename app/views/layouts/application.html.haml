@@ -21,6 +21,7 @@
             = link_to new_user_session_path do
               ログイン
     .contents
+      = render 'layouts/notifications'
       = yield
     -if user_signed_in?
       .post-btn

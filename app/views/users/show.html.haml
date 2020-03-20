@@ -13,8 +13,8 @@
         = link_to edit_user_registration_path, class:"user_contents__upper-info__action--sign-out", method: :get do
           = icon('fas', 'user-edit')
           編集
-      - elsif 
-        = link_to "#",class: "user_contents__upper-info__action--edit", method: :delete do
+      - else
+        = link_to "#", class: "user_contents__upper-info__action--edit" do
           = icon('far', 'envelope')
           メッセージを送る
         = link_to "#", class:"user_contents__upper-info__action--sign-out", method: :get do
