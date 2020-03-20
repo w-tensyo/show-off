@@ -14,10 +14,14 @@
       .post_show_contents__body__content__comment--detail
         = simple_format(@post.comment, {})
   .post_show_contents__under
-    .post_show_contents__under__equ-title
+    %p.post_show_contents__under__equ-title
       機材詳細
-    - @post.gears.each do |gear|
-      .post_show_contents__under__equ-list
+    
+    -if @post.gears.empty?
+      .post_show_contents__under__no-equ-list
+        機材詳細の登録はありません
+    -else
+      - @post.gears.each do |gear|
         %p.post_show_contents__under__equ-list--name
           = gear.equipment
         %p.post_show_contents__under__equ-list--detail

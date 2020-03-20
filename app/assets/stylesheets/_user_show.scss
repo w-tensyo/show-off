@@ -1,6 +1,5 @@
 .user_contents{
   width:$user-detail-width;
-  min-height: 60vh;
   padding:$post-detail-padding;
   margin: 40px auto;
   background-color: #eeeeee;
@@ -8,15 +7,14 @@
   
   &__upper-info{
     width: calc(100% - 30px);
-    height:80px;
-    padding:15px;
+    height:60px;
+    padding:5px;
     display:flex;
     justify-content: space-between;
     &__profile{
       width:60%;
       display:flex;
       &--img{
-        margin:10px 0px;
         height:58px;
         width:58px;
         border: 1px #666666 solid;
@@ -34,11 +32,12 @@
     }
     &__action{
       height:100%;
+      margin-top:10px;
       width:20%;
       display: block;
       &--edit{
         width:100%;
-        margin-top:10px;
+        padding-top:20px;
         text-align: left;
         a{
           display: block;
@@ -76,7 +75,7 @@
   width:100%;
   &--title{
     width:calc(100% - 40px);
-    padding:20px 40px 0px;
+    padding:20px 20px 0 20px;
     font-size:30px;
     background-color: #eeeeee;
   }
