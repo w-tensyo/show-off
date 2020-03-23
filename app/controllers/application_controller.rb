@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def update
-    binding.pry
     user = User.find(param[:id])
     user.update(configure_permitted_parameters)
     if user.save
