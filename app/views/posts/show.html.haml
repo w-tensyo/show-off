@@ -40,8 +40,8 @@
 .post_show__post-comment
   .post_show__post-comment__area
     - if current_user
-      = form_for [@post,@comment] do |f|
-        = f.text_area :text, class: "msg-send-area"
+      = form_for([@post,@comment],id: "new_comment" ) do |f|
+        = f.text_area :text,placeholder: "コメント入力", class: "msg-send-area"
         = f.submit "コメントする", class: "msg-send-button"
     - else
       %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
