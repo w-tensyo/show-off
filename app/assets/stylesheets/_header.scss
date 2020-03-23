@@ -11,12 +11,14 @@ $header-user-area:150px;
   border-bottom: 10px solid $theme-accent-color;
   //aタグ共通のスタイル
   a{
-    color: white;
+    color: #ffffff;
     text-decoration: none;
   }
+  &__title{
+    width:100%;
+  }
   &__content{
-    width: calc(100% - 300px);
-    font-size: 24px;
+    width: calc(100% - 340px);
     font-weight: bold;
     text-align: center;
     padding-left:150px;
@@ -85,5 +87,16 @@ $header-user-area:150px;
         }
       }
     }
+  }
+}
+
+@media screen and (max-width:640px){
+  #title{
+    font-size:18px;
+  }
+}
+@media screen and (min-width:641px){
+  #title{
+    font-size:28px;
   }
 }
