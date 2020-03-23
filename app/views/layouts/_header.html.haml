@@ -1,0 +1,38 @@
+%a#hamburger{:href => "javascript:void(0)"}
+  %span
+  %span
+  %span
+#overlay
+#drawer-menu
+  %ul
+    %li.hamburger__content
+      -if user_signed_in?
+        = link_to user_path(current_user) do
+          = image_tag current_user.prof_image, class: "hamburger__content__user__img", alt: "ほげ"
+        = link_to user_path(current_user),class:"hamburger__content__user__img__name" do
+          = current_user.name
+      - else
+        = link_to new_user_session_path do
+          =icon('fas','sign-in-alt')
+          ログイン
+    %li
+      = link_to root_path do
+        = icon('fas', 'home')
+        TOPへ戻る
+    -if user_signed_in?
+      %li
+        = link_to edit_user_registration_path, method: :get do
+          = icon('fas', 'user-edit')
+          編集
+      %li
+        = link_to destroy_user_session_path, method: :delete do
+          = icon('fas', 'sign-out-alt')
+          ログアウト
+    -else
+      %li
+        = link_to new_user_registration_path do
+          = icon('fas', 'user-plus')
+          新規会員登録
+  %a#close{:href => "javascript:void(0)"}
+    %span
+    %span
