@@ -31,7 +31,16 @@ hr{
 html{
   color:$theme-font-color;
 }
+@media screen and (max-width:640px){
+  h3{
+    margin-bottom:10px;
+    font-size:14px;
+    font-weight: bold;
+  }
+}
 
-h3{
-  margin-bottom:10px;
+@media screen and (min-width:639px){
+  h3{
+    margin-bottom:10px;
+  }
 }

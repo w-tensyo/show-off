@@ -28,30 +28,60 @@ $header-user-area:150px;
       margin-right:10px;
       display: flex;
       overflow-y: hidden;
-      &__img{
-        width: 43px;
-        height: 43px;
-        margin-right:15px;
-        margin-top:5px;
-        display: flex;
-        justify-content: space-between;
-        border: 1px solid #FFFFFF;
-        border-radius: 50%;
-        background-color: #ffffff;
-        &__name{
-          width:105px;
-          line-height: 60px;
-          font-size: 14px;
-          font-weight: none;
+      @media screen and (max-width:640px){
+        &__img{
+          width: 30px;
+          height: 30px;
+          margin-right:15px;
+          margin-top:15px;
+          display: flex;
+          justify-content: space-between;
+          border: 1px solid #FFFFFF;
+          border-radius: 50%;
+          background-color: #ffffff;
+          &__name{
+            width:105px;
+            line-height: 60px;
+            font-size: 12px;
+            font-weight: none;
+          }
+        }
+        &--unlogin{
+          text-align: center;
+          a{
+            width: 100%;
+            height:100%;
+            font-size: 12px;
+            display: block;
+          }
         }
       }
-      &--unlogin{
-        text-align: center;
-        a{
-          width: 100%;
-          height:100%;
-          font-size: 14px;
-          display: block;
+      @media screen and (min-width:641px){
+        &__img{
+          width: 43px;
+          height: 43px;
+          margin-right:15px;
+          margin-top:5px;
+          display: flex;
+          justify-content: space-between;
+          border: 1px solid #FFFFFF;
+          border-radius: 50%;
+          background-color: #ffffff;
+          &__name{
+            width:105px;
+            line-height: 60px;
+            font-size: 14px;
+            font-weight: none;
+          }
+        }
+        &--unlogin{
+          text-align: center;
+          a{
+            width: 100%;
+            height:100%;
+            font-size: 14px;
+            display: block;
+          }
         }
       }
     }
