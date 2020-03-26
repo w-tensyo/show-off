@@ -14,9 +14,9 @@
           = icon('fas', 'user-edit')
           編集
       - else
-        -# = link_to "#", class: "user_contents__upper-info__action--edit" do
-        -#   = icon('far', 'envelope')
-        -#   メッセージを送る
+        = link_to user_messages_path(@user.id), class: "user_contents__upper-info__action--edit" do
+          = icon('far', 'envelope')
+          メッセージを送る
         = render partial: 'relationships/follow_button', user: @user
   
 

@@ -15,10 +15,6 @@
   .contents
     = render 'layouts/notifications'
     = yield
-  -if user_signed_in?
-    .post-btn
-      = link_to new_post_path do
-        = icon('far', 'image')
   .footer
     %p.footer__text
       (c) 2020 Show off

@@ -1,0 +1,5 @@
+.footer-form
+  .footer-form__area
+    = form_for message, :url => {:action => :create} do |f|
+      = f.text_field :content, class: "new-message__text-area", placeholder: "コメントする"
+      = f.submit '送信',class: "new-message__send-form"

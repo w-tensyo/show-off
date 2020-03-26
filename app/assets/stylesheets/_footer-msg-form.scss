@@ -1,0 +1,30 @@
+.footer-form{
+  height:80px;
+  background-color:#eeeeee;
+  padding:10px, 20px;
+  display: flex;
+  &__area{
+    width: 100%;
+    #new_message{
+      height:60px;
+      display: flex;
+      padding:10px;
+      justify-content: space-between;
+      .new-message{
+        display: flex;
+        &__text-area{
+          height:100%;
+          border: 0px;
+          margin:0 10px;
+          width:calc(100% - 140px);
+        }
+        &__send-form{
+          height:100%;
+          margin-right: 10px;
+          border:0px;
+          width:100px;
+        }
+      }
+    }
+  }
+}
