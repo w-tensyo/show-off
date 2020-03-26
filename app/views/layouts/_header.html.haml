@@ -21,6 +21,9 @@
         TOPへ戻る
     -if user_signed_in?
       %li
+        = link_to follow_list_user_path(current_user.id), method: :post do
+          フォロワーリスト
+      %li
         = link_to edit_user_registration_path, method: :get do
           = icon('fas', 'user-edit')
           編集

@@ -4,5 +4,10 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, only: [:create]
   end
-  resources :users, only: [:show,:update]
+  resources :users, only: [:show,:update,] do
+    member do
+      post :follow_list
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
 end

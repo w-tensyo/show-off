@@ -1,0 +1,58 @@
+.user_follow_contents{
+  width:$user-detail-width;
+  padding:$post-detail-padding;
+  margin: 40px auto;
+  background-color: #eeeeee;
+  border-radius:8px;
+  @media screen and (max-width:640px){
+    &__list{
+
+      &--icon{
+
+      }
+      &--name{
+
+      }
+      &--dm_icon{
+
+      }
+
+    }
+  }
+  @media screen and (min-width:641px){
+    &__list{
+      width: 100%;
+      height: 60px;;
+      padding: 5px 0;
+      margin-bottom:10px;
+      display: flex;
+      justify-content: space-between;
+      &--icon{
+        margin-left:5px;
+      }
+      &--name{
+        width:60%;
+        line-height: 65px;
+        margin-left:10px;
+      }
+      &__dm{
+        display: flex;
+        background-color: $theme-accent-color;
+        margin:5px;
+        border-radius: 8px;
+        color:#ffffff;
+        &--icon{
+          width:40px;
+          padding:0 10px;
+          line-height: 55px;
+          font-size: 2em;
+        }
+        &--text{
+          text-align: center;
+          line-height: 55px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
