@@ -8,17 +8,16 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .header
-      .drawer.drawer--left
-        = render 'layouts/header'
+      -# ドロワーを左に設置
+      -# .drawer.drawer--left
+      -#   = render 'layouts/header'
       .header__title
-        %p.header__content#title SHOW OFF
+        #title SHOW OFF
+      -# ドロワーを右に設置したい
+      = render 'layouts/header'
   .contents
     = render 'layouts/notifications'
     = yield
-  -if user_signed_in?
-    .post-btn
-      = link_to new_post_path do
-        = icon('far', 'image')
   .footer
     %p.footer__text
       (c) 2020 Show off

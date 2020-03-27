@@ -2,16 +2,20 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def show
-    @posts = @users.posts
+    @posts = @user.posts
   end
 
   def edit
     
   end
 
+  def follow_list
+    @followings = @user.followings
+  end
+
   def set_user
 
-    @users = User.find(params[:id])
+    @user = User.find(params[:id])
 
     # if user_signed_in?
     #   @users = User.find(params[:id])

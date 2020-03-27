@@ -1,7 +1,7 @@
 @import "reset";
 
 @import "config/colors";
-@import url('https://fonts.googleapis.com/css?family=Caveat:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald:600&display=swap');
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "theme";
@@ -12,6 +12,10 @@
 @import "user_show";
 @import "post_show";
 @import "posts";
+@import "follow";
+@import "follow-list";
+@import "follow-message";
+@import "footer-msg-form";
 @import "post_create";
 @import "modules/flash";
 @import "drawer";

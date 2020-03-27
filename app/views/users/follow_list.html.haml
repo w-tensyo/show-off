@@ -1,0 +1,14 @@
+.user_follow_contents
+  %h3 フォローリスト
+  %hr
+  - @followings.each do |follow|
+    .user_follow_contents__list
+      .user_follow_contents__list--icon
+        = image_tag follow.prof_image, class:"user_contents__upper-info__profile--img",width: "58px",height: "58px", alt: "ほげ"
+      .user_follow_contents__list--name
+        = link_to "#{follow.name}さん",user_path(follow.id)
+      = link_to user_messages_path(follow.id),class: "user_follow_contents__list__dm" do
+        .user_follow_contents__list__dm--icon
+          =icon('far','envelope')
+        %p.user_follow_contents__list__dm--text
+          DMを送る　

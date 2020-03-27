@@ -5,10 +5,16 @@ a{
 
 body{
   background-color: #ffffff;
+  overflow-y: scroll;
+  -ms-overflow-style: none;    /* IE, Edge 対応 */
+  scrollbar-width: none;       /* Firefox 対応 */
+}
+body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+  display:none;
 }
 
 #title{
-  font-family: 'Caveat', cursive;
+  font-family: 'Oswald', sans-serif;
   font-size: 32px;
 }
 
@@ -39,8 +45,10 @@ html{
   }
 }
 
-@media screen and (min-width:639px){
+@media screen and (min-width:641px){
   h3{
     margin-bottom:10px;
+    font-size:18px;
+    font-weight: bold;
   }
 }
