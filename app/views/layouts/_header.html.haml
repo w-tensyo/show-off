@@ -10,7 +10,7 @@
         = link_to user_path(current_user) do
           = image_tag current_user.prof_image, class: "hamburger__content__user__img", alt: "ほげ"
         = link_to user_path(current_user),class:"hamburger__content__user__img__name" do
-          = current_user.name
+          = "#{current_user.name.truncate(10, omission: '...')}さん"
       - else
         = link_to new_user_session_path do
           =icon('fas','sign-in-alt')
@@ -22,6 +22,7 @@
     -if user_signed_in?
       %li
         = link_to follow_list_user_path(current_user.id), method: :post do
+          = icon('fas', 'bookmark')
           フォロワーリスト
       %li
         = link_to edit_user_registration_path, method: :get do

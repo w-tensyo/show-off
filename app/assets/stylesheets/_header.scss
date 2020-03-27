@@ -8,86 +8,20 @@ $header-user-area:150px;
   display:flex;
   background-color: $theme-color;
   line-height: 60px;
+  margin:0 auto;
   color:white;
   border-bottom: 10px solid $theme-accent-color;
-  //aタグ共通のスタイル
   a{
     color: #ffffff;
     text-decoration: none;
   }
   &__title{
-    width:100%;
-  }
-  &__content{
-    width: calc(100% - 340px);
+    width:calc(100% - 50px);
     font-weight: bold;
     text-align: center;
-    padding-left:150px;
     display: block;
-    &__user{
-      width:$header-user-area;
-      height:60px;
-      line-height: 60px;
-      margin-right:10px;
-      display: flex;
-      overflow-y: hidden;
-      @media screen and (max-width:640px){
-        &__img{
-          width: 30px;
-          height: 30px;
-          margin-right:15px;
-          margin-top:15px;
-          display: flex;
-          justify-content: space-between;
-          border: 1px solid #FFFFFF;
-          border-radius: 50%;
-          background-color: #ffffff;
-          &__name{
-            width:105px;
-            line-height: 60px;
-            font-size: 12px;
-            font-weight: none;
-          }
-        }
-        &--unlogin{
-          text-align: center;
-          a{
-            width: 100%;
-            height:100%;
-            font-size: 12px;
-            display: block;
-          }
-        }
-      }
-      @media screen and (min-width:641px){
-        &__img{
-          width: 43px;
-          height: 43px;
-          margin-right:15px;
-          margin-top:5px;
-          display: flex;
-          justify-content: space-between;
-          border: 1px solid #FFFFFF;
-          border-radius: 50%;
-          background-color: #ffffff;
-          &__name{
-            width:105px;
-            line-height: 60px;
-            font-size: 14px;
-            font-weight: none;
-          }
-        }
-        &--unlogin{
-          text-align: center;
-          a{
-            width: 100%;
-            height:100%;
-            font-size: 14px;
-            display: block;
-          }
-        }
-      }
-    }
+    margin: 0 auto;
+    padding-left: 50px;
   }
 }
 

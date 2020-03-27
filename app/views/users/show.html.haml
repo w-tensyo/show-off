@@ -3,7 +3,7 @@
     .user_contents__upper-info__profile
       = image_tag @user.prof_image, class:"user_contents__upper-info__profile--img",width: "58px",height: "58px", alt: "ほげ"
       .user_contents__upper-info__profile--name
-        = @user.name
+        = "#{@user.name}　さん"
     .user_contents__upper-info__action
       -if user_signed_in? && current_user.id == @user.id
         = link_to destroy_user_session_path,class: "user_contents__upper-info__action--edit", method: :delete do
