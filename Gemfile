@@ -73,6 +73,7 @@ gem "font-awesome-sass"
 #画像アップロードようのgem
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
 
 
 gem 'activerecord-import'

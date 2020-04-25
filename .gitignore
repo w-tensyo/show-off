@@ -18,3 +18,7 @@
 
 # 画像は管理しない
 public/uploads/*
+
+
+
+config/secrets.yml
