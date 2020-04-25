@@ -73,3 +73,7 @@ gem 'mini_magick'
 gem 'activerecord-import'
 
 gem 'jquery-rails'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
