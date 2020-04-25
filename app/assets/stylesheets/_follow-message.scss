@@ -4,29 +4,91 @@
   margin: 40px auto;
   background-color: #eeeeee;
   border-radius:8px;
+  position: relative;
   &__area{
     width:100%;
     display: flex;
     padding:5px;
+    position: relative;
     &__show{
-      width: 100%;
-      display: flex;
-      &__prof{
-        width: 180px;
-        display: flex;
-        &--icon{
-          margin-top:5px;
+      @media screen and (max-width:640px){
+        &__prof{
+          height:60px;
+          display: flex;
+          &--icon{
+            margin-top:14px;
+          }
+          &--name{
+            line-height: 60px;
+            
+            min-width:80%;
+            font-size:12px;
+            margin-left:5px;
+          }
         }
-        &--name{
-          margin-left:5px;
-          line-height: 71px;
+      }
+      @media screen and (min-width:641px){
+        width: 100%;
+        display: flex;
+        &__prof{
+          width: 180px;
+          display: flex;
+          &--icon{
+            margin-top:5px;
+          }
+          &--name{
+              font-size:12px;
+              margin-left:5px;
+              line-height: 71px;
+          }
         }
       }
       &__comment{
-        width: calc(100% - 350px);
-        line-height: 71px;
+        display: block;
+        @media screen and (max-width:640px){
+          &--detail{
+            background-color: #ffffff;
+            padding:5px 10px;
+            border-radius: 15px;
+          }
+        }
+        @media screen and (min-width:641px){
+          width: calc(100% - 360px);
+          &--detail{
+            background-color: #ffffff;
+            padding:5px 10px;
+            border-radius: 15px;
+          }
+        }
       }
+    }
+    @media screen and (max-width:640px){
       &__detail{
+        position: absolute;
+        right:0px;
+        width: 150px;
+        &--created_at{
+          font-size:10px;
+          color:#aaaaaa;
+        }
+        &--delete{
+          width: 40%;
+          margin:2px auto 5px;
+          background-color: $theme-sub-color;
+          border-radius: 8px;
+          text-align: center;
+          a{
+            text-decoration: none;
+            color:#ffffff;
+            font-size:10px;
+          }
+        }
+      }
+    }
+    @media screen and (min-width:641px){
+      &__detail{
+        position: absolute;
+        right:0px;
         width: 150px;
         &--created_at{
           font-size:12px;
@@ -35,7 +97,7 @@
         &--delete{
           width: 60%;
           margin:15px auto 5px;
-  
+
           background-color: $theme-sub-color;
           border-radius: 8px;
           text-align: center;
@@ -48,7 +110,19 @@
       }
     }
   }
+  &__back-btn{
+    width:100px;
+    z-index:100;
+    position: fixed;
+    left:10px;
+    top:0px;
+    line-height: 60px;
+    color: #ffffff;
+  }
 }
+
+
+
 .follow-msgs-footer{
   position: fixed;
   height:80px;

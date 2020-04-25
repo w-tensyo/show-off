@@ -1,22 +1,26 @@
 .follow-msgs-content
   %h3 メッセージ一覧
   - user = User.find_by(id: @message.receive_user_id)
-  - @messages.each do |message|
+  -if @messages.empty?
     .follow-msgs-content__area
-      .follow-msgs-content__area__show
-        .follow-msgs-content__area__show__prof
-          .follow-msgs-content__area__show__prof--icon
-            = image_tag message.user.prof_image, class:"user_contents__upper-info__profile--img",width: "58px",height: "58px", alt: "ほげ"
-          = link_to message.user.name, user_path(message.user),class: "follow-msgs-content__area__show__prof--name"
-        .follow-msgs-content__area__show__comment
-          = message.content
-        .follow-msgs-content__area__show__detail
-          .follow-msgs-content__area__show__detail--created_at
+      まだメッセージがありません。
+  -else
+    - @messages.each do |message|
+      .follow-msgs-content__area
+        .follow-msgs-content__area__show
+          .follow-msgs-content__area__show__prof
+            .follow-msgs-content__area__show__prof--icon
+              = image_tag message.user.prof_image, class:"user_contents__upper-info__profile--img",width: "58px",height: "58px", alt: "ほげ"
+            = link_to message.user.name.truncate(10), user_path(message.user),class: "follow-msgs-content__area__show__prof--name"
+          .follow-msgs-content__area__show__comment
+            .follow-msgs-content__area__show__comment--detail
+              = message.content
+        .follow-msgs-content__area__detail
+          .follow-msgs-content__area__detail--created_at
             = "投稿日時： #{message.created_at.strftime("%m/%d %H:%M")}"
-          .follow-msgs-content__area__show__detail--delete
+          .follow-msgs-content__area__detail--delete
             - if current_user == message.user
               = link_to "削除", user_message_path(current_user, message), method: :delete, data: { confirm: "コメントを削除します。よろしいですか？" }
 .follow-msgs-footer
   = render 'messages/form', message: @message
-.follow-msgs-msgs-content__back-btn
-  = link_to "ホームへ戻る", user_path(current_user)
+= link_to "← 戻る", root_path, class: "follow-msgs-content__back-btn"

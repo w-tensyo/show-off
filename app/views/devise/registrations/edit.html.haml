@@ -60,7 +60,6 @@
       .sign_contents__under
         = f.submit "更新",class: "sign_contents__under--singin-btn"
         .sign_contents__under__other
-          = link_to :back do
-            .sign_contents__under__other__back-btn
-              Back
           = render "devise/shared/links"
+
+= link_to "← 戻る", root_path, class: "follow-msgs-content__back-btn"
