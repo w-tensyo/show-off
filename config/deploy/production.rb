@@ -7,7 +7,9 @@ server '18.179.164.30', user: "ec2-user", roles: %w{app db web}, my_property: :m
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-
+#Basic認証を本番にのみ反映させる記述
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
 
 # role-based syntax
 # ==================
