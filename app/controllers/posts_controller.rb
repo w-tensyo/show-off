@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+before_action :set_post, only: [:show]
+
 
   class PostForm
     include ActiveModel::Model #テーブルは持たないが、ApplicationRecordのsaveメソッドなどを提供
@@ -23,7 +25,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
   end
@@ -41,8 +42,35 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_update_params)
+    redirect_to root_path, notice: '修正が完了しました'
+  end
+
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path, notice: '投稿を削除しました'
+  end
+
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+
   def post_params
     params.require(:posts_controller_post_form).permit(:comment, :image, :equipment, :equ_comment, :post_id).merge(user_id: current_user.id)
+  end
+
+  def post_update_params
+    params.require(:post).permit(:comment, :image,gears_attributes: [:equipment,:equ_comment,:_destroy,:id])
   end
 end

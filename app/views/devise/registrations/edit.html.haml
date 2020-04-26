@@ -4,6 +4,14 @@
 
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
     = render "devise/shared/error_messages", resource: resource
+
+    .sign_contents__form
+      .sign_contents__form__upper
+        = f.label "お名前",class: "sign_contents__form__upper__name"
+        .sign_contents__form__upper--icon
+          #requier 必須
+      = f.text_field :name, autofocus: true, autocomplete: "name",placeholder: "お名前を入力してください", class: "sign_contents__form__under"
+
     .sign_contents__form
       .sign_contents__form__upper
         = f.label "プロフィール画像",class: "sign_contents__form__upper__name"
@@ -25,7 +33,7 @@
       .sign_contents__form__upper
         = f.label "メールアドレス",class: "sign_contents__form__upper__name"
         .sign_contents__form__upper--icon
-          #requierIcon 必須
+          #requier 必須
       = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "exsample@show-off.jp", class: "sign_contents__form__under"
 
 
@@ -41,7 +49,7 @@
       .sign_contents__form__upper
         = f.label "パスワード再入力",class: "sign_contents__form__upper__name"
         .sign_contents__form__upper--icon
-          #requierIcon 必須
+          #requier 必須
       = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "もう一度入力をお願いします。", class: "sign_contents__form__under"
 
     .sign_contents__form

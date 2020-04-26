@@ -19,11 +19,11 @@ SHOW OFF
 ### ElasticIP
 http://18.179.164.30/
 ### Basic認証
- - UserName:admin
- - PassWord:show-off
+ - UserName:　admin
+ - PassWord:　show-off
 ### テスト用アカウント
- - test001@test
- - Test$001
+ - Email:　test001@test
+ - PassWord：　Test$001
 
 ## 作成意図
 主に2点です。

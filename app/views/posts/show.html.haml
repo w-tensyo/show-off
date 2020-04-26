@@ -26,6 +26,16 @@
           = gear.equipment
         %p.post_show_contents__under__equ-list--detail
           = gear.equ_comment
+  .post_show_contents__editArea
+    -if user_signed_in?
+      -if @post.user_id == current_user.id
+        =link_to edit_post_path(@post), class: "post_show_contents__editArea__editBtn" do
+          投稿の編集
+        =link_to post_path(@post),method: :delete, data: { confirm: '投稿を削除します。よろしいですか？' }, class: "post_show_contents__editArea__deleteBtn" do
+          投稿の削除
+      -else
+
+
 .post_show_comments
   %hr
   %h3 - Comments - 
@@ -44,6 +54,7 @@
         = f.text_area :text,placeholder: "コメント入力", class: "msg-send-area"
         = f.submit "コメントする", class: "msg-send-button"
     - else
-      %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+      .post_show__post-comment__area--noLogin
+        ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
 
 = link_to "← 戻る", root_path, class: "follow-msgs-content__back-btn"

@@ -1,0 +1,46 @@
+.post_create_content
+  .post_create_content__title
+    %h2 投稿内容の編集
+    %hr
+
+    = form_for(@post) do |f|
+      .post_create_content__form
+        .post_create_content__form__upper
+          = f.label "コメント・自慢ポイント",class: "post_create_content__form__upper__name"
+          .post_create_content__form__upper--icon
+            #optional 任意
+        = f.text_area :comment,autocomplete: "comment",placeholder: "熱い想いを語ろう！", class: "post_create_content__form__underTextArea"
+
+      .post_create_content__form
+        .post_create_content__form__upper
+          = f.label "機材画像",class: "post_create_content__form__upper__name"
+          .post_create_content__form__upper--icon
+            #optional 任意
+        .post_create_content__form__underImgForm--view
+          = image_tag @post.image, id: "uploadImg"
+        .post_create_content__form__underImgForm
+          = f.file_field :image,autocomplete: "image", id: "myfile", class:"post_create_content__form__underImgForm--uploadBtn"
+      %span.between-detail-margin
+      %h2 機材詳細
+      %hr
+
+      = f.fields_for :gears do |i|
+        -@post.gears.each_with_index do |gear, index|
+          .post_create_content__form
+            .post_create_content__form__upper
+              = i.label "機材名",class: "post_create_content__form__upper__name"
+              .post_create_content__form__upper--icon
+                #optional 任意
+            = i.text_field :equipment,autocomplete: "equipment",placeholder: "品番、メーカーなど", class: "post_create_content__form__under"
+
+          .post_create_content__form
+            .post_create_content__form__upper
+              = i.label "機材詳細",class: "post_create_content__form__upper__name"
+              .post_create_content__form__upper--icon
+                #optional 任意
+            = i.text_field :equ_comment, autocomplete: "equ_comment",placeholder: "機材についての詳細", class: "post_create_content__form__under"
+      = f.hidden_field :user_id, value: @post.user_id
+
+    
+      .post_create_content__btnArea
+        = f.submit "投稿を編集する", id: "activeBtn"
