@@ -1,65 +1,59 @@
 .sign_contents
   %h2 プロフィール編集
-  -# Edit #{resource_name.to_s.humanize}
   %hr
 
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
     = render "devise/shared/error_messages", resource: resource
-    .field
-      .field__left
-        = f.label "メールアドレス"
-      .field__right
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: "field__entry-form"
+    .sign_contents__form
+      .sign_contents__form__upper
+        = f.label "プロフィール画像",class: "sign_contents__form__upper__name"
+        .sign_contents__form__upper--icon
+          #optional 任意
+      .sign_contents__form__underImgForm--view
+        = image_tag @user.prof_image, id: "uploadImg"
+      .sign_contents__form__underImgForm
+        = f.file_field :prof_image, id: "myfile", class:"sign_contents__form__underImgForm--uploadBtn"
 
-    -# prof_imageを編集するためのfieldを手動で追加 
-    .field
-      .field__left
-        = f.label "プロフィールコメント"
-      .field__right
-        = f.text_area :text, autofocus: true
-    -# ここまで
+    .sign_contents__form
+      .sign_contents__form__upper
+        = f.label "プロフィールコメント",class: "sign_contents__form__upper__name"
+        .sign_contents__form__upper--icon
+          #optional 任意
+      = f.text_area :text, class: "sign_contents__form__underTextArea"
 
-    -# prof_imageを編集するためのfieldを手動で追加 
-    .field
-      .field__left
-        = f.label "プロフィール画像"
-      .field__right
-        = f.file_field :prof_image, autofocus: true
-    -# ここまで
+    .sign_contents__form
+      .sign_contents__form__upper
+        = f.label "メールアドレス",class: "sign_contents__form__upper__name"
+        .sign_contents__form__upper--icon
+          #requierIcon 必須
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "exsample@show-off.jp", class: "sign_contents__form__under"
+
 
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      %div
-        パスワード for: #{resource.unconfirmed_email}
-    .field
-      .field__left
-        = f.label "新規パスワード",class: "field__com"
-      .field__right
-        = f.password_field :password, autocomplete: "new-password"
-        - if @minimum_password_length
-          %br/
-          .field__right__under-text
-            = @minimum_password_length
-            文字以上入力してください。（半角英数字）
-    .field
-      .field__left
-        = f.label "パスワード再入力"
-        %br/
-      .field__right
-        = f.password_field :password_confirmation, autocomplete: "new-password"
+      パスワード for: #{resource.unconfirmed_email}
+    .sign_contents__form
+      .sign_contents__form__upper
+        = f.label "新規パスワード",class: "sign_contents__form__upper__name"
+        .sign_contents__form__upper--icon
+          #optional 任意
+      = f.password_field :password, autocomplete: "new-password", placeholder: "半角英数字6文字以上", class: "sign_contents__form__under"
+    .sign_contents__form
+      .sign_contents__form__upper
+        = f.label "パスワード再入力",class: "sign_contents__form__upper__name"
+        .sign_contents__form__upper--icon
+          #requierIcon 必須
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "もう一度入力をお願いします。", class: "sign_contents__form__under"
 
-    .field
-      .field__left
-        = f.label "現在のパスワード"
-        .field__left__under-text
-          パスワード再設定の場合、
-          %br
-          現在のパスワードを入力する必要があります。
-      .field__right
-        = f.password_field :current_password, autocomplete: "current-password"
+    .sign_contents__form
+      .sign_contents__form__upper
+        = f.label "現在のパスワード",class: "sign_contents__form__upper__name"
+        .sign_contents__form__upper--icon
+          #optional 任意
+      = f.password_field :current_password, autocomplete: "current-password", placeholder: "変更をするために現在のパスワードを入力してください。", class: "sign_contents__form__under"
+
+    .sign_contents__btnArea
+      = f.submit "アカウントの設定を変更する", id: "activeBtn"
+
     %hr
-      .sign_contents__under
-        = f.submit "更新",class: "sign_contents__under--singin-btn"
-        .sign_contents__under__other
-          = render "devise/shared/links"
 
 = link_to "← 戻る", root_path, class: "follow-msgs-content__back-btn"

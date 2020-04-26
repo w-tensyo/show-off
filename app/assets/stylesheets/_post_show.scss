@@ -87,7 +87,7 @@
     padding:$post-detail-padding;
     padding-top:5px;
     padding-bottom:15px;
-    margin: 0px auto;
+    margin: 0px auto 0px;
     background-color: #eeeeee;
     &__area{
       margin: 10px 15px;
@@ -117,8 +117,8 @@
     width:$user-detail-width;
     padding:$post-detail-padding;
     padding-bottom:15px;
-    margin: 0px auto 20px;
-    background-color: #babbc2;
+    margin: 0px auto 60px;
+    background-color: #c4c6de;
     border-radius: 0 0 8px 8px;
     &__area{
       margin: 15px;
@@ -260,8 +260,8 @@
     width:$user-detail-width;
     padding:$post-detail-padding;
     padding-bottom:15px;
-    margin: 0px auto 20px;
-    background-color: #babbc2;
+    margin: 0px auto 60px;
+    background-color: #c4c6de;
     border-radius: 0 0 8px 8px;
     &__area{
       margin: 15px;

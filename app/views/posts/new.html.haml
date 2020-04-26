@@ -1,29 +1,44 @@
 .post_create_content
-  .post_content__title
-    %h2 投稿
+  .post_create_content__title
+    %h2 機材の投稿
     %hr
 
     = form_for(@post_form, url: {controller: 'posts',action: 'create'}) do |f|
-      .post_content__form
-        .post_content__form__left
-          = f.label "コメント"
-        .post_content__form__right
-          = f.text_area :comment
-      .post_content__form
-        .post_content__form__left
-          = f.label "画像"
-        .post_content__form__right
-          = f.file_field :image
-      .post_content__form
-        .post_content__form__left
-          = f.label "機材名"
-        .post_content__form__right
-          = f.text_field :equipment
-      .post_content__form
-        .post_content__form__left
-          = f.label "機材詳細"
-        .post_content__form__right
-          = f.text_field :equ_comment
-      = f.hidden_field :cid, :value => ""
-      = f.hidden_field :userid, :value => ""
-      = f.submit "登録"
+      .post_create_content__form
+        .post_create_content__form__upper
+          = f.label "コメント・自慢ポイント",class: "post_create_content__form__upper__name"
+          .post_create_content__form__upper--icon
+            #optional 任意
+        = f.text_area :comment,placeholder: "熱い想いを語ろう！", class: "post_create_content__form__underTextArea"
+
+      .post_create_content__form
+        .post_create_content__form__upper
+          = f.label "機材画像",class: "post_create_content__form__upper__name"
+          .post_create_content__form__upper--icon
+            #optional 任意
+      .post_create_content__form__underImgForm--view
+        = image_tag "", id: "uploadImg"
+      .post_create_content__form__underImgForm
+        = f.file_field :image, id: "myfile", class:"post_create_content__form__underImgForm--uploadBtn"
+      %span.between-detail-margin
+      %h2 機材詳細
+      %hr
+
+      .post_create_content__form
+        .post_create_content__form__upper
+          = f.label "機材名",class: "post_create_content__form__upper__name"
+          .post_create_content__form__upper--icon
+            #optional 任意
+        = f.text_field :equipment,placeholder: "品番、メーカーなど", class: "post_create_content__form__under"
+
+      .post_create_content__form
+        .post_create_content__form__upper
+          = f.label "機材詳細",class: "post_create_content__form__upper__name"
+          .post_create_content__form__upper--icon
+            #optional 任意
+        = f.text_field :equ_comment,placeholder: "機材についての詳細", class: "post_create_content__form__under"
+        = f.hidden_field :cid, :value => ""
+        = f.hidden_field :userid, :value => ""
+    
+      .post_create_content__btnArea
+        = f.submit "show off!", id: "activeBtn"

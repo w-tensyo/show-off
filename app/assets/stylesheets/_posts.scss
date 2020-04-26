@@ -3,7 +3,7 @@
     width:100%;
     padding:0 0 15px 0;
     margin:0 auto;
-    background-color: #eeeeee;
+    height: 100%;
     &__user{
       width:calc(100% - 10px);
       height:40px;
@@ -81,7 +81,6 @@
     width:$post-detail-width;
     height: 100%;
     padding:$post-detail-padding;
-    background-color: #eeeeee;
     display:flex;
     flex-wrap: wrap;
     &__user{

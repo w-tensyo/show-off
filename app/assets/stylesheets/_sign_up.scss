@@ -1,69 +1,115 @@
 .sign_contents{
-  width:$user-detail-width;
+  width:$sign-detail-width;
   padding:$post-detail-padding;
   border-radius: 8px;
-  margin: 40px auto;
+  padding-bottom: 10px;
+  margin: 40px auto 80px;
   background-color: #eeeeee;
-  h2{
-    font-size:20px;
-    margin-bottom:5px;
-  }
-  .field{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom:15px;
-    &__left{
-      width:45%;
-      margin-right:15px;
-      display: block;
-      &__under-text{
-        font-size:10px;
-      }
-    }
-    &__right{
-      width:45%;
-      &__under-text{
-        font-size:10px;
-      }
-    }
-  }
-  &__under{
+  &__form{
     width: 100%;
-    margin-right:10px;
-    display: flex;
-    justify-content: space-between;
-    &--singin-btn{
-      border-style:none;
-      margin-bottom: 30px;
-      border:1px solid $theme-accent-sub-color;
-      border-radius: 8px;
-      background-color:$theme-accent-color;
-      color:#FFFFFF;
-      padding:5px 10px;
-    }
-    &__other{
-      width:30%;
+    margin-bottom: 24px;
+    &__upper{
+      width: 100%;
       display: flex;
-      justify-content: flex-end;
-      &__back-btn{
-        border-style:none;
-        margin-bottom: 30px;
-        border:1px solid #666666;
-        border-radius: 8px;
-        background-color:#FFFFFF;
-        color:#666666;
-        padding:5px 10px;
-        margin-right:20px;
+      justify-content:space-between;
+      margin-bottom: 8px;
+      &__name{
+        font-size: 18px;
+        font-weight: bold;
       }
-      &__login-btn{
-        border-style:none;
-        margin-bottom: 30px;
-        border:1px solid #666666;
-        border-radius: 8px;
-        background-color:#FFFFFF;
-        color:#666666;
-        padding:5px 10px;
+    }
+    &__under{
+      width: calc(100% - 16px);
+      height: 30px;
+      border: 1px solid $theme-sub-color;
+      border-radius: 4px;
+      padding:4px 8px;
+      font-size: 12px;
+    }
+    &__underTextArea{
+      max-width: calc(100% - 16px);
+      min-width: calc(100% - 16px);
+      min-height: 130px;
+      border: 1px solid $theme-sub-color;
+      border-radius: 4px;
+      padding:4px 8px;
+      font-size: 12px;
+    }
+    &__underImgForm{
+      width: calc(100% - 8px);
+      &--view{
+        margin:10px auto;
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+        border: 1px solid $theme-sub-color;
+        img{
+          max-width: 200px;
+          max-height: 200px;
+        }
+      }
+      &--uploadBtn{
       }
     }
   }
+  &__btnArea{
+    margin-top:32px;
+    margin-bottom: 32px;
+  }
+
+  &__under{
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0 0;
+    &__back-btnArea{
+
+      &__back-btn{
+        display: block;
+        font-size: 12px;
+        padding: 6px 20px;
+        background-color: #fff;
+        border: 0px;
+        border-radius: 8px;
+        color:$theme-font-color;
+      }
+      &__other{
+
+      }
+    }
+  }
+}
+
+
+
+
+#activeBtn{
+  font-size: 18px;
+  width: 100%;
+  height:50px;
+  background-color: $theme-accent-color;
+  border: 0px;
+  border-radius: 8px;
+  line-height: 50px;
+  color:#fff;
+}
+
+
+#optional{
+  font-size: 12px;
+  padding: 4px;
+  width: 60px;
+  background-color: $theme-color;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+}
+
+#requier{
+  font-size: 12px;
+  padding: 4px;
+  width: 60px;
+  background-color: $theme-accent-color;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
 }

@@ -1,31 +1,63 @@
 .post_create_content{
   width:$user-detail-width;
   padding:$post-detail-padding;
-  margin: 40px auto;
+  margin: 40px auto 80px;
   background-color: #eeeeee;
-  h2{
-    font-size:20px;
-    margin-bottom:5px;
-  }
+
   &__title{
     width:100%;
   }
-  .post_content{
+  &__form{
     width: 100%;
-    display: block;
-    &__form{
-      width: 100%;
-      display: block;
+    margin-bottom: 24px;
+    &__upper{
       display: flex;
-      justify-content: space-between;
-      margin-bottom:15px;
-      &__left{
-        width:20%;
-        margin-right:15px;
+      justify-content:space-between;
+      margin-bottom: 8px;
+      &__name{
+        font-size: 18px;
+        font-weight: bold;
       }
-      &__right{
-        width:80%;
+    }
+    &__under{
+      width: calc(100% - 8px);
+      height: 30px;
+      border: 1px solid $theme-sub-color;
+      border-radius: 4px;
+      padding:4px;
+    }
+    &__underTextArea{
+      max-width: calc(100% - 8px);
+      min-width: calc(100% - 8px);
+      min-height: 130px;
+      border: 1px solid $theme-sub-color;
+      border-radius: 4px;
+      padding:4px;
+    }
+    &__underImgForm{
+      width: calc(100% - 8px);
+      &--view{
+        margin:10px auto;
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+        border: 1px solid $theme-sub-color;
+        img{
+          max-width: 200px;
+          max-height: 200px;
+        }
+      }
+      &--uploadBtn{
       }
     }
   }
+  &__btnArea{
+    margin-top:32px;
+    margin-bottom: 32px;
+  }
+}
+
+.between-detail-margin{
+  display: block;
+  margin-top: 32px;
 }
