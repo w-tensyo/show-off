@@ -15,8 +15,15 @@ SHOW OFF
  - 画像投稿機能（UI、機能改善中）
  - 投稿へのコメント機能
 
-## 本番環境(デプロイ先 テストアカウント＆ID)
-準備中
+## 本番環境
+### ElasticIP
+http://18.179.164.30/
+### Basic認証
+ - UserName:admin
+ - PassWord:show-off
+### テスト用アカウント
+ - test001@test
+ - Test$001
 
 ## 作成意図
 主に2点です。
