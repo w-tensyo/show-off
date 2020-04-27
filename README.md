@@ -64,3 +64,6 @@ http://18.179.164.30/
  - フォロー機能の改善（機能を実装しただけで使い勝手が悪い状態）
  - 手が回っていない細かいviewの修正
 
+## SNS
+ - Twitter: https://twitter.com/DTensyo
+ - Qiita: https://qiita.com/dr_tensyo

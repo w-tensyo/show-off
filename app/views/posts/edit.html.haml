@@ -25,22 +25,38 @@
       %hr
 
       = f.fields_for :gears do |i|
-        -@post.gears.each_with_index do |gear, index|
-          .post_create_content__form
-            .post_create_content__form__upper
-              = i.label "機材名",class: "post_create_content__form__upper__name"
-              .post_create_content__form__upper--icon
-                #optional 任意
-            = i.text_field :equipment,autocomplete: "equipment",placeholder: "品番、メーカーなど", class: "post_create_content__form__under"
+        #equipDetailListArea
+          .equipForm{data: {equipment: "#{i.index}"}}
+            .post_create_content__form{data: {equipment: "#{i.index}"}}
+              .post_create_content__form__upper
+                = i.label "機材名",class: "post_create_content__form__upper__name"
+                .post_create_content__form__upper--icon
+                  #optional 任意
+              = i.text_field :equipment,placeholder: "品番、メーカーなど", class: "post_create_content__form__under"
+              -if @post.persisted?
+                = i.check_box :_destroy,data:{ index: i.index }, class: 'hidden-destroy'
+            .post_create_content__form
+              .post_create_content__form__upper{data: {equ_comment: "#{i.index}"}}
+                = i.label "機材詳細",class: "post_create_content__form__upper__name"
+                .post_create_content__form__upper--icon
+                  #optional 任意
+              = i.text_field :equ_comment,placeholder: "機材についての詳細", class: "post_create_content__form__under"
+              -if @post.persisted?
+                = i.check_box :_destroy,data:{ index: i.index }, class: 'hidden-destroy'
 
-          .post_create_content__form
-            .post_create_content__form__upper
-              = i.label "機材詳細",class: "post_create_content__form__upper__name"
-              .post_create_content__form__upper--icon
-                #optional 任意
-            = i.text_field :equ_comment, autocomplete: "equ_comment",placeholder: "機材についての詳細", class: "post_create_content__form__under"
-      = f.hidden_field :user_id, value: @post.user_id
+      .post_create_content__optionForm
+        .post_create_content__optionForm__info
+          詳細項目の追加/削除
+        .post_create_content__optionForm--add
+          #addEquipDetail.optionIcon
+            =icon('far','plus-square')
+        .post_create_content__optionForm--remove
+          #removeEquipDetail.optionIcon
+            =icon('far','minus-square')
 
-    
+
+      = f.hidden_field :user_id, value: current_user.id
+      .post_create_content__optionForm
+
       .post_create_content__btnArea
         = f.submit "投稿を編集する", id: "activeBtn"
