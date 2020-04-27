@@ -5,6 +5,7 @@ $theme-accent-color:#f26900e4;
 $theme-accent-sub-color:#bb5201e0;
 
 $theme-font-color: #131d25;
+$theme-font-sub-color:#333c43;
 
 $post-detail-width: calc(100% - 30px);
 $post-detail-padding:20px 15px;
@@ -12,3 +13,15 @@ $post-detail-padding:20px 15px;
 $user-detail-width: calc(80% - 40px);
 $sign-detail-width: 50%;
 $edit-btn-color: #134db1f3;
+
+// ボタンの種類別共通カラー設定
+$positive-btn-color:rgb(232, 139, 0);
+$negative-btn-color:rgb(193, 198, 211);
+
+
+$add-btn-color:rgb(249, 174, 44);
+$add-btn-border-color:rgb(206, 156, 68);
+$add-btn-font-color:rgb(97, 83, 58);
+$remove-btn-color:rgb(255, 255, 255);
+$remove-btn-border-color: #8daac2;
+$remove-btn-font-color:rgb(61, 75, 84);

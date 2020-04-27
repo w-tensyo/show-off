@@ -43,7 +43,7 @@ before_action :set_post, only: [:show]
     #   redirect_to root_path
     # end
     @post = Post.new(post_params)
-    if @post.save!
+    if @post.save
       redirect_to root_path, notice: '保存されました'
     else
       redirect_to root_path
