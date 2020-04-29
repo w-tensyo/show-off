@@ -9,7 +9,8 @@
   %body
     .header
       .header__title
-        #title SHOW OFF
+        =link_to root_path do
+          #title SHOW OFF
       = render 'layouts/header'
   .contents
     = render 'layouts/notifications'
