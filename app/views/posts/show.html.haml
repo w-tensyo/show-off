@@ -4,7 +4,45 @@
       = image_tag @post.user.prof_image, class:"post_show_contents__header--img"
       .post_show_contents__header--name
         = @post.user.name
-  %hr
+    %hr
+    .post_show_contents__under__category
+      - @parents.each do |parent|
+        -if @post.category_id == parent.id
+          .post_show_contents__under__category--parent
+            = link_to '#' do
+              = parent.name
+            .post_show_contents__under__category--disc
+              >
+        //子要素までの場合
+        - parent.children.each do |child|
+          -if @post.category_id == child.id
+            .post_show_contents__under__category--parent
+              = link_to '#' do
+                = parent.name
+              .post_show_contents__under__category--disc
+                >
+            .post_show_contents__under__category--child
+              = link_to '#' do
+                = child.name
+              .post_show_contents__under__category--disc
+                >
+          //孫要素までの場合
+          - child.children.each do |grandchild|
+            -if @post.category_id == grandchild.id
+              .post_show_contents__under__category--parent
+                = link_to '#' do
+                  = parent.name
+                .post_show_contents__under__category--disc
+                  >
+              .post_show_contents__under__category--child
+                = link_to '#' do
+                  = child.name
+                .post_show_contents__under__category--disc
+                  >
+              .post_show_contents__under__category--grandChild
+                = link_to '#' do
+                  = grandchild.name
+
   .post_show_contents__body
     .post_show_contents__body--img
       = image_tag @post.image
@@ -16,16 +54,21 @@
   .post_show_contents__under
     %p.post_show_contents__under__equ-title
       機材詳細
-    
+      #equ-border
     -if @post.gears.empty?
       .post_show_contents__under__no-equ-list
         機材詳細の登録はありません
     -else
       - @post.gears.each do |gear|
         %p.post_show_contents__under__equ-list--name
-          = gear.equipment
+          = "【#{gear.equipment}】"
         %p.post_show_contents__under__equ-list--detail
           = gear.equ_comment
+
+
+
+
+
   .post_show_contents__editArea
     -if user_signed_in?
       -if @post.user_id == current_user.id
@@ -37,8 +80,7 @@
 
 
 .post_show_comments
-  %hr
-  %h3 - Comments - 
+  %h3 コメント 
   .post_show_comments__area
     - @comments.each do |comment|
       .post_show_comments__area__list

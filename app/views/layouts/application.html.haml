@@ -8,10 +8,49 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .header
+      .header__categoryArea
+        -# カテゴリー
+        -# .categoryMenu
+        -#   .categoryMenu__parents
+          -#   .categoryMenu__parents__list
+          -#     = link_to "#", class: "categoryListDetail" do
+          -#       .categoryListDetail--name
+          -#         弦楽器
+          -#       .categoryListDetail--disclosure
+          -#         >
+          -#   .categoryMenu__parents__list
+          -#     = link_to "#", class: "categoryListDetail" do
+          -#       .categoryListDetail--name
+          -#         打楽器
+          -#       .categoryListDetail--disclosure
+          -#         >
+          -# .categoryMenu__children
+          -# 非同期で子カテゴリーを表示予定
+            -# .categoryMenu__children__list
+            -#   = link_to "#", class: "categoryListDetail" do
+            -#     .categoryListDetail--name
+            -#       ギター
+            -#     .categoryListDetail--disclosure
+            -#       >
+          .categoryMenu__grandChildren
+          -# 非同期で孫カテゴリーを表示予定
+            -# .categoryMenu__grandChildren__list
+            -#   = link_to "#", class: "categoryListDetail" do
+            -#     .categoryListDetail--name
+            -#       エレキギター
+            -#     .categoryListDetail--disclosure
+            -#       >
+            -# .categoryMenu__grandChildren__list
+            -#   = link_to "#", class: "categoryListDetail" do
+            -#     .categoryListDetail--name
+            -#       クラシックギター
+            -#     .categoryListDetail--disclosure
+            -#       >
       .header__title
         =link_to root_path do
           #title SHOW OFF
-      = render 'layouts/header'
+      .header__menu
+        = render 'layouts/header'
   .contents
     = render 'layouts/notifications'
     = yield
