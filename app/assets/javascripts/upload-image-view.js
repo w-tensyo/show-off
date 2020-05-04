@@ -1,6 +1,5 @@
 $(function(){
   $('#myfile').change(function(e){
-    console.log("気づいているよ");
     //ファイルオブジェクトを取得する
     var file = e.target.files[0];
     var reader = new FileReader();

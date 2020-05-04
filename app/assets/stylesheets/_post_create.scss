@@ -3,6 +3,8 @@
   padding:$post-detail-padding;
   margin: 40px auto 80px;
   background-color: #eeeeee;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
 
   &__title{
     width:100%;
@@ -54,6 +56,16 @@
       }
       &--uploadBtn{
       }
+    }
+    &__selecter{
+      width: 100%;
+      height: 40px;
+      border: 1px solid $theme-sub-color;
+      border-radius: 4px;
+      padding:4px;
+      margin-bottom: 20px;
+      font-size:14px;
+      color: $theme-font-sub-color;
     }
   }
   &__btnArea{
