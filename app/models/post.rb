@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
 
   belongs_to :user
+  belongs_to :category
   has_many :comments
   has_many :gears, dependent: :destroy
   accepts_nested_attributes_for :gears,allow_destroy: true

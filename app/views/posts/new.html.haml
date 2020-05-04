@@ -22,6 +22,16 @@
         = image_tag "", id: "uploadImg"
       .post_create_content__form__underImgForm
         = f.file_field :image, id: "myfile", class:"post_create_content__form__underImgForm--uploadBtn"
+
+      %span.between-detail-margin
+
+      #selectCategory.post_create_content__form
+        .post_create_content__form__upper{data: {category_id: "a"}}
+          = f.label "カテゴリー", clas: "post_create_content__form__upper__name"
+          .post_create_content__form__upper--icon
+            #optional 任意
+        = f.collection_select :category_id, @parent_category_array, :id, :name,{}, {class: "post_create_content__form__selecter", id: "parentSelecter"}
+
       %span.between-detail-margin
       %h2 機材詳細
       %hr
@@ -34,7 +44,7 @@
                 = i.label "機材名",class: "post_create_content__form__upper__name"
                 .post_create_content__form__upper--icon
                   #optional 任意
-              = i.text_field :equipment,placeholder: "品番、メーカーなど", class: "post_create_content__form__under"
+              = i.text_field :equipment,placeholder: "品番、メーカーなど",class: "post_create_content__form__under"
 
             .post_create_content__form
               .post_create_content__form__upper{data: {equ_comment: "#{i.index}"}}
